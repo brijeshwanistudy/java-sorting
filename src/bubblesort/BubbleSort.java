@@ -1,3 +1,5 @@
+package bubblesort;
+
 import java.util.Arrays;
 
 public class BubbleSort {
@@ -10,15 +12,19 @@ public class BubbleSort {
 
     public static int[] bubbleSort(int[] unsortedArray) {
         for (int i = 0; i < unsortedArray.length - 1; i++) {
+            boolean isSwapped = false;
             for (int j = 0; j < unsortedArray.length - 1; j++) {
                 if (unsortedArray[j] > unsortedArray[j + 1]) {
                     int temp = unsortedArray[j];
                     unsortedArray[j] = unsortedArray[j + 1];
                     unsortedArray[j + 1] = temp;
+                    isSwapped = true;
                 }
             }
+            if (!isSwapped) {
+                break;
+            }
         }
-
         return unsortedArray;
     }
 }
